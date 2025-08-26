@@ -34,7 +34,7 @@
 {{- if .IsHome }}
   {{/* get all regular pages instead of pages in a section */}}
   {{- $pages = where site.RegularPages "Section" "in" site.Params.mainSections }}
-  {{- $pages = where $pages "Params.eventdate" ">" time.Now }}
+  {{- $pages = where $pages "Params.eventdate" "<" time.Now }}
 {{- end }}
 {{- $pages = where $pages "Params.hidden" "!=" true }}
 
