@@ -4,6 +4,8 @@
   <h1>
     {{- .Title -}}
   </h1>
+  <div class="event-date">
+    {{ .Eventdate | markdownify }}
   {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
