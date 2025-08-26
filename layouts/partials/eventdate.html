@@ -1,0 +1,4 @@
+{{- if or .Params.eventdate site.Params.eventdate }}
+{{- $eventdate := (.Params.eventdate | default site.Params.eventdate) }}
+{{- $eventdate }}
+{{- end -}}
