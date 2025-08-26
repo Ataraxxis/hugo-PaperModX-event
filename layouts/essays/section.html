@@ -18,6 +18,8 @@
 
 {{- if .Content }}
 <div class="post-content">
+  <p>Hello World!!!2</p>
+  <p>{{ .Param "eventdate" }}</p>
   {{- if not (.Param "disableAnchoredHeadings") }}
   {{- partial "anchored_headings.html" .Content -}}
   {{- else }}{{ .Content }}{{ end }}
