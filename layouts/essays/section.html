@@ -5,7 +5,8 @@
     {{- .Title -}}
   </h1>
   <div class="event-date">
-    {{ with .Param "eventdate" }}<div class="event-date-inner">Hello{{ . }}</div>{{ end }}
+    
+    <div class="event-date-inner">Hello{{ . }}</div>{{ end }}
   {{- if .Description }}
   <div class="post-description">
     Hello World!
