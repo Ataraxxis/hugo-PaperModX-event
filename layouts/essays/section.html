@@ -5,7 +5,7 @@
     {{- .Title -}}
   </h1>
   <div class="event-date">
-    {{ .eventdate | markdownify }}
+    {{ with .Param "eventdate" }}<div class="event-date-inner">Hello{{ . }}</div>{{ end }}
   {{- if .Description }}
   <div class="post-description">
     Hello World!
