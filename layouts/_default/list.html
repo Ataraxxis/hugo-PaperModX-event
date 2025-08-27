@@ -38,7 +38,8 @@
   {{ warnf "Error: %s" $pagedebug }}
   {{ range $pages }}
     {{ $page := . }}
-    {{ warnf "Page %s" $page }}
+    {{ warnf "Page %s" . }}
+    {{ warnf "Params %s" .Params }}
     {{ $eventdate := $page.Params.eventdate }}
     {{ with $eventdate }} 
       {{ warnf "Try parsing %s" .Params.eventdate }}
