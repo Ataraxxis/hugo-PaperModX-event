@@ -43,7 +43,7 @@
     {{ warnf "Eventdate %s" .Params.eventdate }}
     {{ $eventdate := $page.Params.eventdate }}
     {{ with $eventdate }} 
-      {{ warnf "Try parsing %s" .Params.eventdate }}
+      {{ warnf "Try parsing %s" $page.Params.eventdate }}
       {{ $parseddate := .Params.eventdate  | time.Format (default "January 2, 2006" site.Params.DateFormat) }}
       {{ warnf "Parsed to: %s" $parseddate }}
     {{ end }}
