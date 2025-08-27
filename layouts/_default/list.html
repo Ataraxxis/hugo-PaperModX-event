@@ -37,7 +37,9 @@
   {{- $pagedebug := where $pages .Params.eventdate ">=" time.Now }}
   {{ warnf "Error: %s" $pagedebug }}
   {{ range $pages }}
-    {{ warnf "Error: %s" .Params.eventdate  | time.Format (default "January 2, 2006" site.Params.DateFormat) }}
+    {{ with . }} 
+      {{ warnf "Error: %s" .Params.eventdate  | time.Format (default "January 2, 2006" site.Params.DateFormat) }}
+    {{ end }}
   {{ end }} 
 {{- end }}
 {{- $pages = where $pages "Params.hidden" "!=" true }}
