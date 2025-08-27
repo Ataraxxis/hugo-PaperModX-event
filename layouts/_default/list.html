@@ -40,6 +40,7 @@
     {{ $page := . }}
     {{ warnf "Page %s" . }}
     {{ warnf "Params %s" .Params }}
+    {{ warnf "Eventdate %s" .Params.eventdate }}
     {{ $eventdate := $page.Params.eventdate }}
     {{ with $eventdate }} 
       {{ warnf "Try parsing %s" .Params.eventdate }}
