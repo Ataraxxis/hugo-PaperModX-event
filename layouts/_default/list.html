@@ -51,6 +51,7 @@
       {{ warnf "Parsed to: %s" $parseddate }}
       {{ $now := time.Now | time.Format (default "2006-01-02" site.Params.DateFormat) }}
       {{ if ge $parseddate $now }}
+        {{ warnf "is ge than" }}
         {{ $currentevents := $currentevents | append $page }}
       {{ end }}
     {{ end }}
