@@ -42,7 +42,8 @@
     {{ warnf "Params %s" .Params }}
     {{ warnf "Eventdate %s" .Params.eventdate }}
     {{ $eventdate := $page.Params.eventdate }}
-    {{ with $eventdate }} 
+    {{ with $eventdate }}
+      {{ warnf "Local %s" . }} 
       {{ warnf "Try parsing %s" $page.Params.eventdate }}
       {{ $parseddate := .Params.eventdate  | time.Format (default "January 2, 2006" site.Params.DateFormat) }}
       {{ warnf "Parsed to: %s" $parseddate }}
