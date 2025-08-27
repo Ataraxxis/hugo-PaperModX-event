@@ -50,6 +50,7 @@
       {{ $parseddate := . | time.Format ("2006-01-02") }}
       {{ warnf "Parsed to: %s" $parseddate }}
       {{ $now := time.Now | time.Format ("2006-01-02") }}
+      {{ warnf "Now: %s" $now }}
       {{ if ge $parseddate $now }}
         {{ warnf "is ge than" }}
         {{ $currentevents := $currentevents | append $page }}
