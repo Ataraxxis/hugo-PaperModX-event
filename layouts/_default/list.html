@@ -36,6 +36,9 @@
   {{- $pages = where site.RegularPages "Section" "in" site.Params.mainSections }}
   {{- $pagedebug := where $pages .Params.eventdate ">=" time.Now }}
   {{ warnf "Error: %s" $pagedebug }}
+  {{ range $pages }}
+    {{ warnf "Error: %s" .Params }}
+  {{ end }} 
 {{- end }}
 {{- $pages = where $pages "Params.hidden" "!=" true }}
 
