@@ -38,11 +38,12 @@
   {{ warnf "Error: %s" $pagedebug }}
   {{ range $pages }}
     {{ $page := . }}
+    {{ warnf "Page %s" $page }}
     {{ $eventdate := $page.Params.eventdate }}
     {{ with $eventdate }} 
       {{ warnf "Try parsing %s" .Params.eventdate }}
       {{ $parseddate := .Params.eventdate  | time.Format (default "January 2, 2006" site.Params.DateFormat) }}
-      {{ warnf "Pared to: %s" $parseddate }}
+      {{ warnf "Parsed to: %s" $parseddate }}
     {{ end }}
   {{ end }} 
 {{- end }}
